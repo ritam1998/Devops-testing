@@ -1,4 +1,4 @@
 FROM openjdk:8
 EXPOSE 8080
-ADD build/libs/*.jar devOps-integration.jar
-ENTRYPOINT ["java","-jar","/devOps-integration.jar"]
+ADD build/libs/*.jar devops-integration.jar
+ENTRYPOINT ["java","-jar","/devops-integration.jar"]
