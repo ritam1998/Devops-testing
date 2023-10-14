@@ -22,18 +22,15 @@ pipeline{
         }
         stage('Login'){
             steps{
-                echo DOCKERHUB_CREDENTIALS
-                   echo 'Hello world'
+                withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpassword')]) {
+                    bat 'docker login -u ritamdey.1998@gmail.com -p $dockerhubpassword '
+                }
             }
         }
         stage('Push image to docker hub'){
             steps{
                 script{
-                    withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpassword')]) {
-                        bat "echo $dockerhubpassword"
-//                         bat 'docker login -u ritamdey.1998@gmail.com -p ${dockerhubpassword} '
-                        bat 'docker push ritamde23/devops-integration:latest'
-                    }
+                   bat 'docker push ritamde23/devops-integration:latest'
                 }
             }
         }
