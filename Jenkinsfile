@@ -23,6 +23,7 @@ pipeline{
         stage('Login'){
             steps{
 //                 echo $DOCKERHUB_CREDENTIALS
+                   echo 'Hello world'
             }
         }
         stage('Push image to docker hub'){
