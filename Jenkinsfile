@@ -22,7 +22,7 @@ pipeline{
         }
         stage('Login'){
             steps{
-                echo $DOCKERHUB_CREDENTIALS
+//                 echo $DOCKERHUB_CREDENTIALS
             }
         }
         stage('Push image to docker hub'){
