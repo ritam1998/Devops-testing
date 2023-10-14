@@ -23,7 +23,7 @@ pipeline{
         stage('Login'){
             steps{
                 withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpassword')]) {
-                    bat 'docker login -u ritamdey.1998@gmail.com -p $dockerhubpassword '
+                    bat "docker login -u ritamdey.1998@gmail.com --password-stdin $dockerhubpassword "
                 }
             }
         }
