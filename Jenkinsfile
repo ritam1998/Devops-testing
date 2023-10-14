@@ -30,7 +30,7 @@ pipeline{
             steps{
                 script{
                     withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpassword')]) {
-                        echo dockerhubpassword
+                        bat "echo $dockerhubpassword"
 //                         bat 'docker login -u ritamdey.1998@gmail.com -p ${dockerhubpassword} '
                         bat 'docker push ritamde23/devops-integration:latest'
                     }
