@@ -37,7 +37,7 @@ pipeline{
         stage('Deploy to K8s'){
             steps{
                 script{
-                    bat kubernetesDeploy (configs: 'kubernetes/deployment.yml', kubeconfigId: 'k8config')
+                    kubernetesDeploy configs: 'kubernetes/deployment.yml', kubeConfig: [path: ''], kubeconfigId: 'k8config01', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                 }
             }
         }
