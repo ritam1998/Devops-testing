@@ -14,7 +14,7 @@ jar{
 }
 
 java {
-	sourceCompatibility = '8'
+	sourceCompatibility = '11'
 }
 
 repositories {
