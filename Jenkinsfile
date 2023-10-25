@@ -16,7 +16,7 @@ pipeline{
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t ritamde23/devops-integration:latest .'
+                    bat 'docker build -t ritamde23/devops-integration:0.0.1 .'
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline{
         stage('Push image to docker hub'){
             steps{
                 script{
-                   bat 'docker push ritamde23/devops-integration:latest'
+                   bat 'docker push ritamde23/devops-integration:0.0.1'
                 }
             }
         }
